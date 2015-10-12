@@ -52,7 +52,7 @@
   },
   "main": "dist/index.html",
   "window": {
-    "width": 960,
-    "height": 600
+    "width": 980,
+    "height": 770
   }
 }
