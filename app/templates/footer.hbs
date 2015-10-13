@@ -1,5 +1,9 @@
 <footer>
-    <a href={{settings.copyright_url}} target="_blank">{{t "links.copyright.descr"}}</a>
+    {{#external-link href="settings.copyright_url"}}
+       {{t "links.copyright.descr"}}
+    {{/external-link}}
     <span>{{t "links.copyright.descr_aux"}}</span>
-    <a href={{settings.terms_url}} target="_blank" class="right">{{t "links.terms.descr"}}</a>
+    {{#external-link href="settings.terms_url" classNames="right"}}
+        {{t "links.terms.descr"}}
+    {{/external-link}}
 </footer>
