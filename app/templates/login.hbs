@@ -8,7 +8,7 @@
             <div class="input-with-error">
                 {{input value=token id="token"}}
                 <i class="login-info">
-                    {{t "links.api_access.descr_aux"}} <a href={{settings.api_access_url}} target="_blank">{{t "links.api_access.descr"}}</a>.
+                    {{t "links.api_access.descr_aux"}} {{#external-link href="settings.api_access_url"}}{{t "links.api_access.descr"}}{{/external-link}}.
                 </i>
                 {{#if error}}
                     <div class="alert-box alert">
