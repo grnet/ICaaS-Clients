@@ -1,7 +1,8 @@
 module.exports = {
-  appName: 'icaas',
-  platforms: ['linux64', 'win64', 'osx64'],
+  appName: 'ICaaS',
+  platforms: ['linux64'],
   version: 'v0.12.0',
+  "icon": "/dist/assets/images/logo.png",
   buildType: function() {
     return this.appVersion;
   }
