@@ -47,20 +47,6 @@
                 {{fa-icon "ban"}}<span>{{t "buttons.abort"}}!</span>
             </a>
         {{/if}}
-        <a class="button small info right" {{action "toggle_log"}}>
-            <span>
-                {{#if log_loader}}
-                    {{fa-icon "refresh" spin=true}}{{t "buttons.logs_loading"}}
-                {{else if log_contents}}
-                    {{fa-icon "file-text-o"}}{{t "buttons.logs_hide"}}
-                {{else}}
-                    {{fa-icon "file-text-o"}}{{t "buttons.logs_show"}}
-                {{/if}}
-            </span>
-        </a>
-        {{#if log_contents}}
-            <a class="button small info right" {{action "load_log"}}>{{fa-icon "refresh"}}</a>
-        {{/if}}
         {{#if showConfirm}}
             <div class="alert-panel">
                 <p>{{t 'confirmation.build_abort_question'}}</p>
@@ -71,14 +57,7 @@
                 </div>
             </div>
         {{/if}}
-
-
     </div>
-    {{#if log_contents}}
-        <div class="panel file">
-            <pre>{{log_contents}}</pre>
-        </div>
-    {{/if}}
     {{#if loading}}
         <div class="text-center loader">{{fa-icon "fa-refresh" spin=true}}</div>
     {{/if}}
