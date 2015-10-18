@@ -27,7 +27,7 @@
     {{#if model.description}}
         <dt>{{t 'labels.descr'}}</dt><dd  class="wrap-text">{{model.description}}</dd>
     {{/if}}
-    <dt>{{t 'labels.url'}}</dt><dd> <a href="{{model.src}}" target="_blank" class="wrap-text">{{model.src}}</a></dd>
+    <dt>{{t 'labels.url'}}</dt><dd>{{#external-link href=model.src cls="wrap-text"}}{{model.src}}{{/external-link}}</dd>
     <dt>{{t 'labels.logs_full_path'}}</dt><dd class="wrap-text">{{model.log}}</dd>
     <dt>{{t 'labels.public'}}</dt><dd>{{model.public}}</dd>
     <hr>
