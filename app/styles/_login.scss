@@ -27,14 +27,27 @@ $horizontal-dist: 1rem;
     }
 
     input {
-        width: 100%;
+        &[type=text] {
+            width: 100%;
+        }
+        &[type=checkbox] {
+            margin-left: rem-calc(6);
+            vertical-align: text-bottom;
+            margin-bottom: 0;
+        }
     }
 
     label {
         display: inline-block;
-        width: rem-calc(50);
-        font-size: 1rem;
         margin-right: $horizontal-dist;
+        &[for=token] {
+            font-size: 1rem;
+            width: rem-calc(50);
+        }
+        &[for=stayLoggedIn] {
+            display: block;
+            margin-top: rem-calc(20);
+        }
     }
 
     button {

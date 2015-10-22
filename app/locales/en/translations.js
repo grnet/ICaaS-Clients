@@ -65,6 +65,7 @@ export default {
     build_abort_question: 'Are you sure you want to <b>abort</b> the build?'
   },
   empty_build_list: 'No builds.',
+  stay_logged_in_msg: 'Remember me',
   welcome: {
     default: 'Welcome, user',
     logged_in: 'Welcome'

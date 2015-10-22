@@ -9,6 +9,10 @@ export default Ember.Route.extend({
       this.get('settings').set('token', c.getCookie('token'));
       this.get('settings').set('uuid', c.getCookie('uuid'));
       this.get('settings').set('username', c.getCookie('username'));
+    } else if(localStorage.token) {
+      this.get('settings').set('token', localStorage.token);
+      this.get('settings').set('uuid', localStorage.uuid);
+      this.get('settings').set('username', localStorage.username);
     } else {
       this.transitionTo('login'); 
     }

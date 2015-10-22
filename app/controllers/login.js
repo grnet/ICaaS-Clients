@@ -6,6 +6,19 @@ export default Ember.Controller.extend({
   errorMsg: null,
   isLoggedIn: false,
 
+  /*
+  * If the user clicks the checkbox that is bound with the stayLoggedIn
+  * prop the localStorage prop gets updated
+  */
+
+  trackLoginPref: function() {
+    if(this.get('stayLoggedIn')) {
+      localStorage.stayLoggedIn = this.get('stayLoggedIn');
+    } else {
+      localStorage.stayLoggedIn = '';
+    }
+  }.observes('stayLoggedIn').on('init'),
+
   actions: {
     'tryLogin': function(){
       var token = this.get('token');
@@ -24,6 +37,16 @@ export default Ember.Controller.extend({
       c.setCookie('token', this.get('settings.tokenInfo.token.id'));
       c.setCookie('uuid', this.get('settings.tokenInfo.user.id'));
       c.setCookie('username', this.get('settings.tokenInfo.user.name'));
+      if (localStorage.stayLoggedIn) {
+        localStorage.token = this.get('settings.tokenInfo.token.id');
+        localStorage.uuid = this.get('settings.tokenInfo.user.id');
+        localStorage.username = this.get('settings.tokenInfo.user.name');
+      }
+      else {
+        localStorage.token = '';
+        localStorage.uuid = '';
+        localStorage.username = '';
+      }
       this.set('token', '')
       this.set('isLoggedIn', 'true')
       this.transitionToRoute('application');

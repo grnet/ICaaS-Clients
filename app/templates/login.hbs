@@ -9,6 +9,10 @@
                 {{input value=token id="token"}}
                 <i class="login-info">
                     {{t "links.api_access.descr_aux"}} {{#external-link href="settings.api_access_url"}}{{t "links.api_access.descr"}}{{/external-link}}.
+                    <label for="stayLoggedIn">
+                        {{t 'stay_logged_in_msg'}}
+                        {{input type="checkbox" id="stayLoggedIn" checked=stayLoggedIn}}
+                    </label>
                 </i>
                 {{#if error}}
                     <div class="alert-box alert">

@@ -6,6 +6,9 @@ export default Ember.Route.extend({
     this.get('cookie').removeCookie('token');
     this.get('cookie').removeCookie('uuid');
     this.get('cookie').removeCookie('username');
+    localStorage.token = '';
+    localStorage.uuid = '';
+    localStorage.username = '';
   },
 
     setupController: function(controller, model) {
