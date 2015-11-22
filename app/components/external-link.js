@@ -10,7 +10,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'a',
   i18n: Ember.inject.service(),
-  classNameBindings: ['cls'],
   click: function() {
     var param_href = this.get('href');
     var href;
