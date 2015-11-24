@@ -10,7 +10,7 @@ export default DS.RESTSerializer.extend({
     var info;
     payload.builds.forEach(function(build) {
       info = JSON.parse(build.status_details);
-      build['status_info'] = info.details;
+      build['status_info'] = info['current-task'];
       if(info['agent-progress']) {
         let current = Number(info['agent-progress'].current);
         let total = Number(info['agent-progress'].total);
@@ -28,7 +28,7 @@ export default DS.RESTSerializer.extend({
   normalizeFindRecordResponse: function(store, primaryModelClass, payload, id, requestType) {
     var build = payload.build;
     var info = JSON.parse(build.status_details);
-    build['status_info'] = info.details;
+    build['status_info'] = info['current-task'];
     if(info['agent-progress']) {
       let current = Number(info['agent-progress'].current);
       let total = Number(info['agent-progress'].total);
